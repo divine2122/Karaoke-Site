@@ -1,92 +1,63 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
 import './App.css';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
   } from "react-router-dom";
 
   import {
     functionsCall,
   } from "./services/datastore"
+  import { Home } from "./pages/Home";
+  import { Landing } from "./pages/Landing";
+  import { Users } from "./pages/Users";
+  import Title from "./Title";
+  import Header from "./Header";
+
 
 
 class App extends Component {
     constructor(props) {
     super(props);
     this.state = {
-        
-        
+        lyrics: null
+          
     };
     }
 
 componentDidMount = () => {
-    //functionsCall().then((output)=> console.log(output))
 
     functionsCall()
     .then((res)=> {
     return res.json()})
     .then(   
-    (output)=> console.log(output))
+    (output)=> {
+    this.setState({lyrics: output.data.lyrics})
 
-}
-  
-
-
-Landing() {
-    //functionsCall().then((output)=> console.log(output))
-
-    return (
-    <h2>Landing</h2>
+    console.log(output)}
     )
-  }
-  
-Users() {
-    return <h2>Users</h2>;
-  }
-  
-Home() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
 
-        <a
-          className="Auth-link"
-          href="https://api.genius.com/oauth/authorize?client_id=zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC&redirect_uri=http://localhost:3000/landing&scope=me&state=SOME_STATE_VALUE&response_type=code"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Authorize App
-        </a>
-      </header>
-    </div>
-  );
 }
+  
 
+render() {   
+    return (
+        <Router>
+            <div>
 
-/*function App()*/ render() {
-    
-return (
-<Router>
-<div>
-<Switch>
-            <Route path="/landing">
-              <this.Landing />
-            </Route>
-            <Route path="/users">
-              <this.Users />
-            </Route>
-            <Route path="/">
-              <this.Home />
-            </Route>
-          </Switch>
-
-</div>
-</Router>
-)}
+    {/* <div className="App">
+      <Header />
+    </div> */}
+            <Switch>
+                <Route exact path="/landing" render={(props) => (<Landing {...props} lyrics={this.state.lyrics} />)}/>
+                <Route exact path="/users" render={(props) => (<Users {...props} lyrics={this.state.lyrics} />)}/>
+                <Route exact path="/"  component={Home}/>
+            </Switch>
+            </div>
+        </Router>
+    )
+}
 }
 
 export default App;

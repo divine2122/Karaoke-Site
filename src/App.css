@@ -37,3 +37,10 @@
     transform: rotate(360deg);
   }
 }
+
+#outside { background: linear-gradient(#e66465, #9198e5); }
+#inside { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(2px); }
+
+body {
+  background: rgb(4, 37, 68); /* Fallback for when there is no custom background color defined. */
+}
