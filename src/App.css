@@ -43,4 +43,7 @@
 
 body {
   background: rgb(4, 37, 68); /* Fallback for when there is no custom background color defined. */
+  color:bisque;
+  font-family: Optima, Helvetica, sans-serif;
+  letter-spacing: 1px;
 }

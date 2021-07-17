@@ -7,7 +7,7 @@ import {
   } from "react-router-dom";
 
   import {
-    functionsCall,
+    authFunction,
   } from "./services/datastore"
   import { Home } from "./pages/Home";
   import { Landing } from "./pages/Landing";
@@ -21,25 +21,33 @@ class App extends Component {
     constructor(props) {
     super(props);
     this.state = {
-        lyrics: null
-          
+        data: null,
+        //lyricData: {data:'Placeholder. Dont delete'}
     };
     }
 
 componentDidMount = () => {
 
-    functionsCall()
+    authFunction()
     .then((res)=> {
     return res.json()})
     .then(   
     (output)=> {
-    this.setState({lyrics: output.data.lyrics})
-
-    console.log(output)}
-    )
+    this.setState({lyricData: this.dataSetter(output)})
+  }
+  )
 
 }
-  
+
+dataSetter = (output) => {
+  if (output.data && output.data.lyrics && output.data.translatedLyrics){
+    return {lyrics:output.data.lyrics, translatedLyrics:output.data.translatedLyrics}
+  } else{ 
+      return 'Retrieval Error'
+    }
+}
+
+
 
 render() {   
     return (
@@ -50,8 +58,8 @@ render() {
       <Header />
     </div> */}
             <Switch>
-                <Route exact path="/landing" render={(props) => (<Landing {...props} lyrics={this.state.lyrics} />)}/>
-                <Route exact path="/users" render={(props) => (<Users {...props} lyrics={this.state.lyrics} />)}/>
+                <Route exact path="/landing" render={(props) => (<Landing {...props} data={this.state.lyricData} />)}/>
+                <Route exact path="/users" render={(props) => (<Users {...props} lyrics={this.state.lyricData} />)}/>
                 <Route exact path="/"  component={Home}/>
             </Switch>
             </div>
