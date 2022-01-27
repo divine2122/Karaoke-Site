@@ -4,8 +4,10 @@ import {
   authFunction, preAuthFunction,
 } from "../services/datastore"
 
-const clientId = 'zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC'
-const redirectUri = 'http://localhost:3000/landing'
+const config = require("../configs/devConfig.json");
+
+const clientId = config.clientId//'zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC'
+const redirectUri = config.redirectUri//'http://localhost:3000/landing'
 
 export class Home extends Component {
 

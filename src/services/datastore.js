@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const config = require("../configs/devConfig.json");
 
 
 export async function authFunction() {
@@ -7,7 +8,7 @@ export async function authFunction() {
 
     console.log('authfunc ran',requestToken)
 
-        const response = await fetch(`http://localhost:3035/home?code=${requestToken}&state=SOME_STATE_VALUE`, {
+        const response = await fetch(`${config.expressRoot}/home?code=${requestToken}&state=SOME_STATE_VALUE`, {
 
         method: "GET",
         headers: {
@@ -27,7 +28,7 @@ export async function preAuthFunction() {
 
   console.log('preauthfunc ran')
 
-      const response = await fetch(`http://localhost:3035/auth`, {
+      const response = await fetch(`${config.expressRoot}/auth`, {
 
       method: "GET",
       headers: {
