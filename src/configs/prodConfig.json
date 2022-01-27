@@ -1,0 +1,5 @@
+{
+  "APP_POINTER": "PROD",
+  "clientId" : "zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC",
+  "redirectUri" : "http://localhost:3000/landing"
+}
