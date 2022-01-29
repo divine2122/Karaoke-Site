@@ -1,5 +1,6 @@
 {
   "APP_POINTER": "PROD",
-  "clientId" : "zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC",
-  "redirectUri" : "http://localhost:3000/landing"
+  "clientId" : "gNQtpUsgmZprjocmiuK-wmSqRk-ebjrGxAqDmCKtC-2Zc879RBxFIaQPtuRwMXhY",
+  "redirectUri" : "https://karaoke-576dc.web.app/landing",
+  "expressRoot" : "http://localhost:3035"
 }

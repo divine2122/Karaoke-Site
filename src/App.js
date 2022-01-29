@@ -28,24 +28,24 @@ class App extends Component {
 
 componentDidMount = () => {
 
-    authFunction()
-    .then((res)=> {
-    return res.json()})
-    .then(   
-    (output)=> {
-    this.setState({lyricData: this.dataSetter(output)})
-  }
-  )
+  //   authFunction()
+  //   .then((res)=> {
+  //   return res.json()})
+  //   .then(   
+  //   (output)=> {
+  //   this.setState({lyricData: this.dataSetter(output)})
+  // }
+  // )
 
 }
 
-dataSetter = (output) => {
-  if (output.data && output.data.lyrics && output.data.translatedLyrics){
-    return {lyrics:output.data.lyrics, translatedLyrics:output.data.translatedLyrics}
-  } else{ 
-      return 'Retrieval Error'
-    }
-}
+// dataSetter = (output) => {
+//   if (output.data && output.data.lyrics && output.data.translatedLyrics){
+//     return {lyrics:output.data.lyrics, translatedLyrics:output.data.translatedLyrics}
+//   } else{ 
+//       return 'Retrieval Error'
+//     }
+// }
 
 
 
