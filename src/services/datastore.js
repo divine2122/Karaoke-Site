@@ -8,12 +8,11 @@ export async function authFunction() {
 
     console.log('authfunc ran',requestToken)
 
-        const response = await fetch(`${config.expressRoot}/home?code=${requestToken}&state=SOME_STATE_VALUE`, {
+        const response = await fetch(`${config.expressRoot}/app?code=${requestToken}&state=SOME_STATE_VALUE`, {
 
         method: "GET",
         headers: {
-            Accept: "application/json",
-            "Content-type": "application/json",
+            //"Content-type": "*/* ",//"application/json",
         },
         });
 

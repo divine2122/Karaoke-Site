@@ -14,14 +14,16 @@ export class Landing extends Component {
       }
 
       componentDidMount = () => {
+        console.log('outside outputfunc')
         authFunction()
         .then((res)=> {
+          console.log('outputtest1',res, res.body)
         return res.json()})
         .then(   
         (output)=> {
+          console.log('outputtest2',output)
         // this.setState({lyricData: this.dataSetter(output)})
         this.setState({lyricData:output})
-
       }
       )
     
