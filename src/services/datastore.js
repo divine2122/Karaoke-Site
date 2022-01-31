@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 const config = require("../configs/devConfig.json");
 
+export {config}
 
 export async function authFunction() {
     const params = new URLSearchParams(window.location.search);

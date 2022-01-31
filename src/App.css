@@ -47,3 +47,8 @@ body {
   font-family: Optima, Helvetica, sans-serif;
   letter-spacing: 1px;
 }
+
+.artistImagePhoto {
+  height: 200px;
+  width: 200px;
+}

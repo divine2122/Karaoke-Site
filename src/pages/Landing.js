@@ -43,6 +43,7 @@ render(){
     return (
         <div>
         <h1>Landing</h1>
+        <img className="artistImagePhoto" src={(this.state.lyricData && this.state.lyricData.data) ? this.state.lyricData.data.imageLink : 'Loading image...'} alt="artist"/>
         <br></br>
         <h2>Original</h2>
         <p>{(this.state.lyricData && this.state.lyricData.data) ? this.state.lyricData.data.lyrics : 'Loading lyrics...'}</p>
