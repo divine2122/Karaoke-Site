@@ -1,13 +1,9 @@
 import React, { Component } from "react";
-import logo from '../logo.svg';
-import {
-  authFunction, preAuthFunction,
-} from "../services/datastore"
 
-const config = require("../configs/devConfig.json");
+import  {config}  from "../services/datastore";
 
-const clientId = config.clientId//'zMNZDYvktFEeAK3Qujfyrt5ActZwYpvvlJwATeprRbLAz3hxp2rZpX3YSHqzRhDC'
-const redirectUri = config.redirectUri//'http://localhost:3000/landing'
+const clientId = config.clientId
+const redirectUri = config.redirectUri
 
 export class Home extends Component {
 
