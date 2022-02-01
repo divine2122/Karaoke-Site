@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const config = require("../configs/prodConfig.json");
+const config = require("../configs/devConfig.json");
 
 export {config}
 
