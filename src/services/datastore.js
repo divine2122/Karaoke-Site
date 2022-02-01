@@ -6,10 +6,11 @@ export {config}
 export async function authFunction() {
     const params = new URLSearchParams(window.location.search);
     const requestToken = params.get('code');
+    const searchQuery = params.get('state');
 
-    console.log('authfunc ran',requestToken)
+    console.log('authfunc ran',requestToken, searchQuery)
 
-        const response = await fetch(`${config.expressRoot}/app?code=${requestToken}&state=SOME_STATE_VALUE`, {
+        const response = await fetch(`${config.expressRoot}/app?code=${requestToken}&state=${searchQuery}`, {
 
         method: "GET",
         headers: {

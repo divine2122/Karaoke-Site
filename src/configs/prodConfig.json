@@ -1,6 +1,0 @@
-{
-  "APP_POINTER": "PROD",
-  "clientId" : "gNQtpUsgmZprjocmiuK-wmSqRk-ebjrGxAqDmCKtC-2Zc879RBxFIaQPtuRwMXhY",
-  "redirectUri" : "https://karaoke-576dc.web.app/landing",
-  "expressRoot" : "https://us-central1-karaoke-576dc.cloudfunctions.net"
-}
