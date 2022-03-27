@@ -35,6 +35,7 @@ render(){
       <div>
         <p>Welcome, youre just in time for karaoke night! Pick your player</p>
       </div>
+      
 
       <form onSubmit={this.handleSubmit}>
         <label>

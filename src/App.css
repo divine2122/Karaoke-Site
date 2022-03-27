@@ -46,6 +46,8 @@ body {
   color:bisque;
   font-family: Optima, Helvetica, sans-serif;
   letter-spacing: 1px;
+  white-space: pre-wrap; /*necessary for line breaks to appear*/
+
 }
 
 .artistImagePhoto {
